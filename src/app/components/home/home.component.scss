@@ -10,9 +10,11 @@ div.container{
 }
 .jumbotron{
     background-image: url("./../../../assets/img/oficina.jpg");
-    background-color:  rgba(0, 0, 0, 0.9);
+    background-color: #9bacc7;
+    border: solid 1px #343f50;
     div.container{
-        background-color: rgba(255, 255, 255,0.8);
+        background-color: rgba(52, 63, 80, 0.5);
+        color:white;
     }
     div.container::after::before{
         content: " ";
