@@ -1,0 +1,15 @@
+div.card{
+    border: 1px solid #e5e9f2;
+
+    div.card-header{
+        background-color: #f8f9fa;
+    }
+
+
+}
+
+@media(min-width:1px) and (max-width:631px){
+    div.card{
+        margin-left: 1rem;
+    }
+}

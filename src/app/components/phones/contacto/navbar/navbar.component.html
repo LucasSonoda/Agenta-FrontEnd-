@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+
+  <div class="buscador">
+    <div class="form-inline">
+      <input class="form-control" type="text" placeholder="Nombre, sector, numero." aria-label="Search" (keyup)="searchContacto(busqueda.value, $event)" #busqueda>
+      <button class="btn btn-outline-info" type="button" (click)="searchContacto(busqueda.value, $event)" search="true">Buscar</button>
+    </div>
+  </div>
+</nav>
+
+<div class="sub-bar">
+<div class="button-group" *ngIf="grupos.length>0">
+      <button  *ngFor="let grupo of grupos" class="btn btn-dark btn-sm" (click)="emitIdGrupo(grupo)" >{{grupo.nombre}}</button>
+  </div>
+</div>

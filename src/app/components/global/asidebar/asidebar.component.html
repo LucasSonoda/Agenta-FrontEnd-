@@ -1,0 +1,29 @@
+<nav class="" #asideBar>
+  <a [routerLink]="[ '/home']" class="siderbar-brand"> <img class="ico"
+      src="./../../../../assets/img/vintagephone.png"><span>SistemasApp</span></a>
+  <ul>
+    <li [routerLink]="[ '/home']" routerLinkActive="active" class="links"><a><i
+          class="fas fa-home"></i><span>Home</span></a></li>
+    <li  class="links">
+      <a data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-phone" ></i>
+        <span>Telefonos</span>
+      </a>
+      <ul class="children-link collapse" id="navbarToggleExternalContent">
+        <li [routerLink]="[ '/phones/contacts']" routerLinkActive="active"><span>Contactos</span></li>
+        <li [routerLink]="[ '/phones/subgroups']" routerLinkActive="active"><span>Subgrupos</span></li>
+        <li [routerLink]="[ '/phones/groups']" routerLinkActive="active"><span>Grupos</span></li>
+      </ul>
+    </li>
+    <li  [routerLink]="[ '/ABMUsers']" routerLinkActive="active" class="links">
+      <a>
+      <i class="fas fa-users-cog"></i>
+      <span>ABM de Usuarios</span>
+      </a>
+    </li>
+  </ul>
+  <div class="half-circle right" (click)="hideAsideBar()">
+    <i class="fas fa-chevron-right fa-lg icon-center"></i>
+  </div>
+  <app-userwidget></app-userwidget>
+</nav>

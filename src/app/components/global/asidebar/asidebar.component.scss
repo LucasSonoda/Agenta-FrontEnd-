@@ -1,0 +1,145 @@
+$size:20px;
+
+nav {
+  position: relative;
+  background-color: #343f50;
+  max-width: 15.625rem;
+  width: 15.625rem;
+  margin-left: 0;
+  min-height: 100vh;
+  height: 100%;
+  color: #adb5bd;
+  transition: width 0.5s;
+  z-index: 10;
+
+  li.links {
+    transition: background-color 0.3s, width 0.5s;
+    position: relative;
+    a {
+      box-sizing: border-box;
+      cursor: pointer;
+      display: block;
+      padding: 0.75rem 1.5rem;
+
+      i {
+        margin-right: 10px;
+      }
+    }
+
+    ul.children-link {
+      list-style-type: none;
+
+      li {
+        text-align: center;
+        padding: 0.5rem 0.8rem;
+        cursor: pointer;
+
+      }
+    }
+  }
+  a[data-toggle]::before{
+    content: " ";
+    border: solid;
+    border-width: 0 .1rem .1rem 0;
+    display: inline-block;
+    padding: 2px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 1.2rem;
+    right: 1.25rem;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+  }
+
+  a[aria-expanded=true]::before{
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    top: 1.4rem;
+  }
+  span {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.6s linear, display 0.6s;
+  }
+
+  li a:hover,
+  li.links li:hover,
+  li.active,a[aria-expanded=true] {
+    background-color: #2d3646;
+    color: #ced4da
+  }
+
+  a.siderbar-brand {
+    text-decoration: none;
+    cursor: pointer;
+    padding: 1.15rem 1.5rem;
+    display: block;
+
+    span {
+      font-size: 1.15rem;
+      color: #f8f9fa;
+    }
+
+    img.ico {
+      margin-right: 0.6rem;
+      width: 1.7rem;
+      height: 1.7rem;
+    }
+  }
+
+
+  app-userwidget {
+    transition: margin-left 0.5s;
+  }
+}
+
+.invisibleAsideBar {
+  width: 75px;
+
+  li.links a {
+    padding: 0.75rem;
+    width: 75px;
+    height: 50px;
+    text-align: center;
+   
+  }
+  li.links{
+    ul.collapse{
+      display:none;
+    }
+  }
+
+  span {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  app-userwidget {
+    margin-left: -250px;
+  }
+}
+
+.half-circle {
+  position: absolute;
+  background: #343f50;
+  display: inline-block;
+  top: 5px;
+  right: -$size;
+  cursor: pointer;
+}
+
+.right {
+  height: $size * 2;
+  width: $size;
+  border-bottom-right-radius: $size * 2;
+  border-top-right-radius: $size * 2;
+}
+
+.icon-center {
+  margin-left: 1.5px;
+  position: absolute;
+  top: 30%;
+  color: #f8f9fa;
+}

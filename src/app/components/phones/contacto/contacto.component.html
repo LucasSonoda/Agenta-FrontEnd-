@@ -1,0 +1,86 @@
+<div class="container mt-2">
+  <button (click)="goBack()" class="btn btn-sm btn-outline-dark"><i class="fas fa-arrow-left"></i><span>Atras</span></button>
+</div>
+
+<div class="container" style="margin-top:10px">
+  <ul *ngIf="errors?.length > 0 " class="alert alert-danger">
+    <li *ngFor="let err of errors">
+      {{err}}
+    </li>
+  </ul>
+  <div class="card mb-3">
+    <div class="card-header">
+      Nuevo Contacto
+    </div>
+    <div class="card-body">
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="inputEmail4">Nombre</label>
+            <input type="nombre" class="form-control" placeholder="Nombre..." name="nombre"
+              [(ngModel)]="contacto.nombre" autocomplete="nope">
+          </div>
+        </div>
+        <hr>
+        <div class="form-row" *ngIf="nuevoSubgrupo==false else elseSubgrupo">
+          <div class="form-group col-md-6">
+            <label for="inputState">Subgrupo</label>
+            <select class="form-control form-control-sm" [compareWith]="compareSubgrupo" name="subgrupo"
+              [(ngModel)]="contacto.subgrupo">
+              <option *ngFor="let subgrupo of subgrupos" [ngValue]="subgrupo">{{subgrupo.nombre}} -
+                {{subgrupo.grupo.nombre}}</option>
+            </select>
+          </div>
+        </div>
+        <button type=" button" (click)="nuevoSubgrupoF()"
+          class="btn btn-secondary btn-sm">{{!nuevoSubgrupo ? 'Nuevo' : 'Volver' }}</button>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Numero</label>
+            <input type="text" class="form-control" placeholder="" name="numero" [(ngModel)]="contacto.numero"
+              autocomplete="nope">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputEmail4">Numero 2 (Opcional)</label>
+            <input type="text" class="form-control" placeholder="" name="numero_2" [(ngModel)]="contacto.numero_2"
+              autocomplete="nope">
+          </div>
+        </div>
+        <hr>
+        <button type="button" (click)="saveContacto()"
+          class="btn btn-primary">{{update==false ? 'Guardar Contacto' : 'Actualizar'}}</button>
+        <button type="button" (click)="deleteContacto()" class="btn btn-danger ml-1"
+          *ngIf="update==true">Eliminar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-->Templates</!-->
+<ng-template #elseSubgrupo>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputState">Subgrupo</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Nuevo</span>
+        </div>
+        <input type="text" class="form-control" aria-label="subgrupo" [(ngModel)]="subgrupo.nombre">
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputState">Grupo</label>
+      <select id="inputState" class="form-control form-control-sm" name="grupo" [(ngModel)]="subgrupo.grupo">
+        <option *ngFor="let grupo of grupos" [ngValue]="grupo">{{grupo.nombre}}</option>
+      </select>
+    </div>
+  </div>
+  <button type="button" (click)="saveSubgrupo()" class="btn btn-success btn-sm m-1">Guardar</button>
+</ng-template>
+<!-->Templates</!-->

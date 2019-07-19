@@ -1,0 +1,21 @@
+<div class="widget">
+  <div *ngIf="login" class="user-widget">
+    <div>
+      <i class="fas fa-user-circle fa-lg icon-center"></i>
+      <span>
+        {{usuario.username}} conectado
+      </span>
+    </div>
+    <div>
+      <div class="logout" (click)="logout()">
+        <i class="fas fa-sign-out-alt"></i>
+        <span>logout</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!login" class="login" [routerLink]="['/login']">
+    <i class="fas fa-sign-in-alt"></i>
+    <span>Login</span>
+  </div>
+</div>

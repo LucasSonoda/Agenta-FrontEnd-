@@ -1,0 +1,84 @@
+.table-phone {
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 65%;
+  background-color: white;
+  border: 1px solid #e5e9f2;
+
+
+  table {
+    margin: 0 auto;
+    text-align: center;
+
+    td {
+      width: 20rem;
+      box-sizing: border-box;
+    }
+
+    td:first-child {
+      margin-left: 1rem;
+      text-align: left;
+      width: 31.5rem
+    }
+
+    td:last-child {
+      width: 4rem;
+
+      i {
+        border: 0.05rem solid teal;
+        color: teal;
+        padding: 0.3rem;
+        border-radius: 0.2rem;
+        box-sizing: border-box;
+        transition: border 0.5s, color 0.5s;
+      }
+    }
+
+    td:last-child {
+
+      i:Hover {
+        border: 0.05rem solid black;
+        color: black;
+        cursor:pointer;
+      }
+    }
+
+    td,
+    th {
+      font-size: .9rem;
+    }
+  }
+}
+
+ul{
+  list-style-type: none;
+  width:80%;
+  text-align: center;
+  margin: 1rem auto;
+}
+
+
+.header {
+  text-align: center;
+  background-color: teal;
+  color: white;
+  font-weight: 600;
+
+  h4 {
+    margin-bottom: 0px;
+  }
+}
+
+.footer {
+  text-align: center;
+  background-color: teal;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem;
+
+  h6 {
+    margin-bottom: 0px;
+  }
+
+}

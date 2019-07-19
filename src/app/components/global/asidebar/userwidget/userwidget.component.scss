@@ -1,0 +1,39 @@
+:host {
+  max-width: 15.625rem;
+  width: 15.625rem;
+  background-color: #343f50;
+  border-top: 0.03rem solid rgb(100, 100, 100);
+  color: #adb5bd;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+}
+
+.widget {
+  .login {
+    cursor: pointer;
+    text-align: center;
+
+    i {
+      margin-right: 0.2rem;
+    }
+  }
+
+  .logout {
+      margin-left: 70%;
+      display: inline-block;
+      cursor: pointer;
+    font-size: 0.9rem;
+    text-align: right;
+    color: rgb(202, 81, 81);
+    i {
+      margin-right: 2px;
+    }
+  }
+}
+
+.icon-center {
+  margin-left: 1.5px;
+  color: #f8f9fa;
+}

@@ -1,0 +1,28 @@
+.list-group-item:Hover {
+  background-color: rgb(170, 184, 206);
+  cursor: pointer;
+  color: white;
+}
+
+.card {
+  max-height: 85vh;
+  overflow: auto;
+}
+
+.card::-webkit-scrollbar {
+    width: 0.5rem;     /* Tamaño del scroll en vertical */
+;    /* Tamaño del scroll en horizontal */
+}
+
+.card::-webkit-scrollbar-track {
+  background: #e1e1e1;
+  border-radius: 4px;
+}
+.card::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+.card::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}

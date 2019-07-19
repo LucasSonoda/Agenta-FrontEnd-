@@ -1,0 +1,76 @@
+.navbar {
+  padding: .3125rem;
+  border-bottom: 1px solid #e5e9f2;
+}
+
+.buscador {
+  margin: 0 auto;
+
+  input {
+    width: 28rem;
+    max-width: 28rem;
+  }
+
+  button {
+    margin-left: 1rem;
+  }
+}
+
+.sub-bar {
+  box-sizing: border-box;
+  width: 100%;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e5e9f2;
+  padding: 0.3rem;
+}
+
+.button-group {
+  background-color: none;
+  margin: 0 auto;
+  text-align: center;
+
+  button {
+    //  width: 7rem;
+    padding: 0 1rem;
+    max-width: 8rem;
+    //height:1.9375rem;
+    box-sizing: border-box;
+    margin-right: 0.15rem;
+    background-color: #474e54;
+  }
+
+  button:last-child {
+    margin-right: 0;
+  }
+
+}
+
+@media(min-width:1px) and (max-width:991px) {
+  .buscador {
+    margin: 0 auto;
+
+    input {
+      margin-left: 25px;
+      width: 15rem;
+    }
+
+  }
+}
+
+@media(min-width:1px) and (max-width:460px) {
+  .buscador {
+
+    button {
+      margin-top: 5px;
+      margin-left: 25px;
+    }
+  }
+
+  .button-group {
+
+
+    button {
+      margin-top: 0.2rem
+    }
+  }
+}

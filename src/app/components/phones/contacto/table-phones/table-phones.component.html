@@ -1,0 +1,33 @@
+<div class="table-phone">
+  <div class="header">
+    <h4>{{nombreGrupo}}</h4>
+  </div>
+  <div>
+    <ul *ngIf="contactos?.length == 0 " class="alert alert-info">
+      <li>
+        No se encontraron contactos.
+      </li>
+    </ul>
+    <table class="table table-sm">
+      <thead *ngIf="contactos?.length != 0 ">
+        <tr>
+          <th scope="col">Nombre</th>
+          <th scope="col">Sector</th>
+          <th scope="col">Numero</th>
+          <th scope="col" *ngIf="auth.hasRole('ROLE_ADMIN')"><i class="fas fa-address-card"></i></th>
+        </tr>
+      </thead>
+      <tbody *ngIf="contactos.length>=0">
+        <tr *ngFor="let contacto of contactos">
+          <td>{{contacto.nombre}}</td>
+          <td>{{ !isSearch ? contacto.subgrupo.nombre : contacto.subgrupo.nombre+"-"+ contacto.subgrupo.grupo.nombre}}</td>
+          <td>{{contacto.numero_2 == null ? contacto.numero : contacto.numero +" / " + contacto.numero_2}}</td>
+          <!-- <td><i class="fas fa-edit" [routerLink]="['phones/contact/', contacto.id]"></i></td> -->
+          <td><i class="fas fa-edit" [routerLink]="['/contacto', contacto.id]" *ngIf="auth.hasRole('ROLE_ADMIN')"></i></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer">
+    </div>
+  </div>
+</div>

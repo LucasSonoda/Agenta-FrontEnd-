@@ -1,0 +1,4 @@
+<app-navbar  *ngIf="navbarShow" [grupos]="grupos" (open)="showGrupo($event)" (search)="searchContacto($event)"></app-navbar>
+<div>
+  <app-table-phones [contactos]="contactos" [nombreGrupo]="nombreGrupo" [isSearch]="isSearch"></app-table-phones>
+</div>

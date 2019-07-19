@@ -1,0 +1,20 @@
+div.container{
+    padding: 0 1rem;
+}
+.image-box{
+    margin-top: 2rem;
+    text-align: center;
+    // background-color: white;
+    border: 1px solid #e5e9f2;
+    background-color:  rgba(0, 0, 0, 0.5);
+}
+.jumbotron{
+    background-image: url("./../../../assets/img/oficina.jpg");
+    background-color:  rgba(0, 0, 0, 0.9);
+    div.container{
+        background-color: rgba(255, 255, 255,0.8);
+    }
+    div.container::after::before{
+        content: " ";
+    }
+}

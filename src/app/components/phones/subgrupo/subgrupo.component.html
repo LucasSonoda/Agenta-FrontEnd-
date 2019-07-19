@@ -1,0 +1,15 @@
+<div class="body-subgroup container-fluid">
+
+  <app-table-subgroups 
+  [subgrupos]="subgrupos" 
+  (sendSubgrupo)="loadSG($event)"
+  ></app-table-subgroups>
+
+  <app-details-subgroup 
+  *ngIf="subgrupo != null" 
+  [getSubgrupo]="subgrupo"
+  (modifica)="modificar($event)"
+  (cancela)="cancelar()"
+  ></app-details-subgroup>
+  
+</div>

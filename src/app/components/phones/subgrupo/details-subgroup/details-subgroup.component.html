@@ -1,0 +1,45 @@
+<div class="card text-center" *ngIf="subgrupo!=null">
+  <div class="card-header">
+    <input  class="form-control text-center text-capitalize" type="text" [value]="subgrupo.nombre"  name="nombre" [(ngModel)]="subgrupo.nombre"/>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{subgrupo.grupo.nombre}}</h5>
+    <p class="card-text">Total de contactos: {{subgrupo.contactos.length}}</p>
+
+    <div class="accordion" id="accordionExample">
+      <div class="card">
+        <div class="" id="headingOne">
+            <button class="btn btn-info btn-sm btn-block" type="button" data-toggle="collapse" data-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">
+              Desplegar contactos
+            </button>
+        </div>
+
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+              <table class="table table-borderless table-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Telefono</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let c of subgrupo?.contactos">
+                      <td>{{c.nombre}}</td>
+                      <td>{{c.numero_2 == null ? c.numero : c.numero +" / " + c.numero_2}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card-footer text-muted">
+      <button class="btn btn-sm btn-primary" (click)="modificar()">Modificar</button>
+      <button class="btn btn-sm btn-danger ml-1" (click)="cancelar()">Cancelar</button>
+    </div>
+</div>
